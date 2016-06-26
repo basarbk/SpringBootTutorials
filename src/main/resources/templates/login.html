@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet"/>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div style="height:120px"></div>
+
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Login</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" name="f" th:action="@{/login}" method="post">
+                            <fieldset>
+				                <div th:if="${param.error}" class="alert alert-error">
+				                    Invalid username and password.
+				                </div>
+				                <div th:if="${param.logout}" class="alert alert-success">
+				                    You have been logged out.
+				                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="User name" id="username" name="username" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" id="password" name="password" type="password" value="">
+                                </div>
+								<div class="form-actions">
+					                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+					            </div>
+							</fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
