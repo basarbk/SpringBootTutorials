@@ -64,11 +64,7 @@ public class MovieController {
 		
 		List<String> incomingFields = new ArrayList<String>(Arrays.asList(rawFields.split(",")));
 		
-		if(user == null || (user!=null && !user.isAdmin())){
-			incomingFields.retainAll(limited);
-		} else {
-			incomingFields.retainAll(all);
-		}
+		incomingFields.retainAll(user!=null && user.isAdmin() ? all : limited);
 		
 		if(incomingFields.size()==0)
 			throw new IllegalArgumentException("Not valid fields: "+rawFields);
