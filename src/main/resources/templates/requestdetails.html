@@ -1,0 +1,23 @@
+<html>
+<head>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet"/>
+
+<title>Request Details</title>
+
+</head>
+
+<body>
+
+<div class="container" >
+	<div class="well">
+		<h4>URL: <span th:text="${req.requestUrl}"/></h4>
+		<h4>Method: <span th:text="${req.requestMethod}"/></h4>
+		<h4>Agent: <span th:text="${req.agent}"/></h4>
+		<h4>Time: <span th:text="${req.time}"/></h4>
+		<h4>IP: <span th:text="${req.ip}"/></h4>
+	</div>
+</div>
+</body>
+
+</html>
